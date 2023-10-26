@@ -7,7 +7,7 @@ El desarrollo Backend contempla lo siguiente:
 - Principios Solid
   
 El desarrollo Frontend contempla lo siguiente:
-- Arquitectura Hexagonal para Backend
+- Arquitectura Hexagonal para Frontend
 - Clean Code
 - Patrones de diseño: Repository
 - Principios Solid
