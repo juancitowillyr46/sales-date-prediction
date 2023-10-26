@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "4CV+sEq3kK9qggC8Y9pHT33GhJu6nZ4d0mR6Bg+xx3059g0kzK8HhYnrNgXGmyjL0x6A/rueNJd9TN9XYwZEXQ==",
+  "success": true,
+  "projectFilePath": "C:\\Data\\Source\\Repos\\sales-date-prediction\\Backend\\sales-date-prediction-app\\Sales.WebApi\\Sales.WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

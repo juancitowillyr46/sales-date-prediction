@@ -1,0 +1,12 @@
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\bin\Debug\net6.0\Sales.Domain.deps.json
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\bin\Debug\net6.0\Sales.Domain.dll
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\bin\Debug\net6.0\Sales.Domain.pdb
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\obj\Debug\net6.0\Sales.Domain.csproj.AssemblyReference.cache
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\obj\Debug\net6.0\Sales.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\obj\Debug\net6.0\Sales.Domain.AssemblyInfoInputs.cache
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\obj\Debug\net6.0\Sales.Domain.AssemblyInfo.cs
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\obj\Debug\net6.0\Sales.Domain.csproj.CoreCompileInputs.cache
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\obj\Debug\net6.0\Sales.Domain.dll
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\obj\Debug\net6.0\refint\Sales.Domain.dll
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\obj\Debug\net6.0\Sales.Domain.pdb
+C:\Data\Source\Repos\sales-date-prediction\Backend\sales-date-prediction-app\Sales.Domain\obj\Debug\net6.0\ref\Sales.Domain.dll
