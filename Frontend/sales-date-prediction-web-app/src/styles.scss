@@ -1,4 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.buttons-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+}
+
+.input-full-width {
+    width: 50%;
+} 
+
+.buttons-row {
+    display: table-cell;
+    max-width: 600px;
+}
+
+.search-form {
+    width: 100%;
+    display: inline-flex;
+    .search-form-box {
+        width: 50%;
+    }
+}
+
+.mat-header-cell:nth-child(3), .mat-column-def-box { width: 25%; }
+
+.mat-toolbar-row {
+    background-color: #272727;
+}
+
+.sticky-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.sticky-toolbar-color-a > mat-toolbar-row {
+    background-color: #272727;
+}
+
+.sticky-toolbar-color-b > mat-toolbar-row {
+    background-color: #B52C2D;
+}
+
+.sticky-toolbar-color-c > mat-toolbar-row {
+    background-color: #4C9950;
+}
+
+.buttons-actions {
+    text-align: right;
+    float: right;  
+}

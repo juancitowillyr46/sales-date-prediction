@@ -1,20 +1,12 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatSort, MatSortModule} from '@angular/material/sort';
-
-export interface SalePredictionData {
-  customerName: string;
-  lastOrderDate: string;
-  nextPredictedOrder: string;  
-}
-
-const NAMES: string[] = [
-  'Maia',
-  'Asher',
-  'Olivia'
-];
-
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { OrdersViewComponent } from '../orders-view/orders-view.component';
+import { OrderFormComponent } from '../order-form/order-form.component';
+import { CustomerService } from 'src/app/adapters/customer-service.impl';
+import { Customer } from 'src/app/domain/models/customer';
 
 @Component({
   selector: 'app-sales-date-prediction-view',
@@ -22,23 +14,20 @@ const NAMES: string[] = [
   styleUrls: ['./sales-date-prediction-view.component.scss']
 })
 export class SalesDatePredictionViewComponent {
-  displayedColumns: string[] = ['customerName', 'lastOrderDate', 'nextPredictedOrder'];
-  dataSource: MatTableDataSource<SalePredictionData>;
-
+  displayedColumns: string[] = ['customerName', 'lastOrderDate', 'nextPredictedOrder', 'id'];
+  dataSource!: MatTableDataSource<Customer>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() {
-    const dataSource = Array.from({length: 20}, (_, k) => createDataSource(k + 1));
-    this.dataSource = new MatTableDataSource(dataSource);
+  constructor(public dialog: MatDialog, private readonly customerService: CustomerService) {
+    this.customerService.getSaleDatePrediction().subscribe(res => {
+      this.dataSource = new MatTableDataSource(res);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
-  applyFilter(event: Event) {
+  public applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -46,18 +35,27 @@ export class SalesDatePredictionViewComponent {
       this.dataSource.paginator.firstPage();
     }
   }
-}
-/** Builds and returns a new User. */
-function createDataSource(id: number): SalePredictionData {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-    ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-    '.';
 
-  return {
-    customerName: name,
-    lastOrderDate: '2/4/2023',
-    nextPredictedOrder: '2/4/2023'
-  };
+  public viewOrder(customer: Customer) {
+    this.openTableModal(customer);
+  }
+
+  public newOrder(customer: Customer) {
+    this.openFormModal(customer);
+  }
+
+  public openTableModal(customer: Customer) {
+    const dialogRef = this.dialog.open(OrdersViewComponent, {
+      width: '80%',
+      data: customer
+    });
+  }
+
+  public openFormModal(customer: Customer) {
+    const dialogRef = this.dialog.open(OrderFormComponent, {
+      width: '45%',
+      data: customer
+    });
+  }
+
 }

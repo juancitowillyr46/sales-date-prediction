@@ -1,0 +1,124 @@
+<mat-toolbar color="primary" class="sticky-toolbar sticky-toolbar-color-c">
+    <mat-toolbar-row>
+        <span>{{ nameCustomer }} - Orders</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="form-container">
+    <form class="form" [formGroup]="form" (ngSubmit)="save()">
+        <h2>Order</h2>
+        <div class="form-group">
+            <mat-form-field class="form-full-medium">
+                <mat-label>Shipper</mat-label>
+                <mat-select formControlName="shipperID">
+                    <mat-option *ngFor="let option of shippers" [value]="option.shipperId">{{option.companyName}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="f['shipperID'].errors && f['shipperID'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+        
+            <mat-form-field class="form-full-medium">
+                <mat-label>Employee</mat-label>
+                <mat-select formControlName="employeeID">
+                    <mat-option *ngFor="let option of employees" [value]="option.empId">{{option.fullName}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="f['employeeID'].errors && f['employeeID'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="form-full-width">
+                <mat-label>Ship Name</mat-label>
+                <input type="text" matInput placeholder="Ej. Juan Rodas" formControlName="shipName">
+                <mat-error *ngIf="f['shipName'].errors && f['shipName'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="form-full-light">
+                <mat-label>Ship Address</mat-label>
+                <input type="text" matInput placeholder="Ej. Address 123" formControlName="shipAddress">
+                <mat-error *ngIf="f['shipAddress'].errors && f['shipAddress'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field class="form-full-light">
+                <mat-label>Ship City</mat-label>
+                <input type="text" matInput placeholder="Ej. Barquisimeto" formControlName="shipCity">
+                <mat-error *ngIf="f['shipCity'].errors && f['shipCity'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-full-light">
+                <mat-label>Ship Country</mat-label>
+                <input type="text" matInput placeholder="Ej. USA" formControlName="shipCountry">
+                <mat-error *ngIf="f['shipCountry'].errors && f['shipCountry'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="form-full-width">
+                <mat-label>Freight</mat-label>
+                <span matPrefix>$ &nbsp;</span>
+                <input type="text" matInput placeholder="Ej. 1.5" formControlName="freight">
+                <mat-error *ngIf="f['freight'].errors && f['freight'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <h2>Order Details</h2>
+        <div class="form-group">
+            <mat-form-field class="form-full-width">
+                <mat-label>Products</mat-label>
+                <mat-select formControlName="productID">
+                    <mat-option *ngFor="let option of products" [value]="option.productId">{{option.productName}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="f['productID'].errors && f['productID'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="form-full-light">
+                <mat-label>Unit Price</mat-label>
+                <input type="text" matInput placeholder="Ej. 150" formControlName="unitPrice">
+                <mat-error *ngIf="f['unitPrice'].errors && f['unitPrice'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field class="form-full-light">
+                <mat-label>Quantity</mat-label>
+                <input type="text" matInput placeholder="Ej. 2" formControlName="qty">
+                <mat-error *ngIf="f['discount'].errors && f['discount'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-full-light">
+                <mat-label>Discount</mat-label>
+                <input type="text" matInput placeholder="Ej. 1" formControlName="discount">
+                <mat-error *ngIf="f['discount'].errors && f['discount'].errors['required']">
+                    Is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="buttons-actions">
+            <div class="buttons-row">
+                <button (click)="closeModal()" type="button" mat-flat-button extended color="warn">
+                    Close
+                </button>
+            </div>
+            <div class="buttons-row">
+                <button (click)="save()" type="button" mat-flat-button extended color="primary">
+                    Save
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
